@@ -1,1 +1,34 @@
-let username = promt
+// Step 1: Personalized Greeting
+let userName = prompt("Enter your first name:");
+if (!userName) {
+    userName = "Guest"; // Default name if input is empty
+}
+
+// Step 2: Welcome Message
+alert(`Welcome, ${userName}, to EatNow Cafe!`);
+
+// Step 3: Display Menu Items in Console
+let menuItems = ["Grilled Chicken", "Pasta Alfredo", "Cheeseburger", "Caesar Salad", "Veggie Pizza"];
+console.log("EatNow Cafe Menu:");
+menuItems.forEach((item, index) => {
+    console.log(`${index + 1}. ${item}`);
+});
+
+// Step 4: Adding a New Dish with Validation
+let newDish;
+do {
+    newDish = prompt("Suggest a new dish to add to the menu:");
+    if (!newDish || newDish.trim() === "") {
+        console.log("Invalid entry! Please enter a valid dish name.");
+    }
+} while (!newDish || newDish.trim() === ""); // Keep prompting until a valid dish is entered
+
+// Add the valid dish to the menu
+menuItems.push(newDish.trim());
+
+// Display updated menu
+console.log("Updated Menu:");
+menuItems.forEach((item, index) => {
+    console.log(`${index + 1}. ${item}`);
+});
+
